@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Óptica Los Jerrys</title>
+<link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+<header>
+<div class="barra">
+<a class="logo" href="#inicio">
+<svg viewBox="0 0 64 32" width="46" height="24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">
+<circle cx="16" cy="18" r="11"/>
+<circle cx="48" cy="18" r="11"/>
+<path d="M27 17q5-4 10 0"/>
+<path d="M5 14L2 8M59 14l3-6"/>
+</svg>
+<span>Óptica Los Jerrys</span>
+</a>
+<nav id="menu" class="oculto">
+<a href="#armazones">Armazones</a>
+<a href="#graduaciones">Graduaciones</a>
+<a href="#accesorios">Accesorios</a>
+<a href="#cotizador">Cotizador</a>
+<a href="#compras">Mis compras</a>
+</nav>
+<div class="sesion">
+<span id="usuarioActual"></span>
+<button id="botonSalir" class="boton chico claro oculto">Salir</button>
+</div>
+</div>
+</header>
+
+<main>
+<section id="inicio" class="portada">
+<div class="portada-texto">
+<h1>Encuentra los lentes perfectos para ti</h1>
+<p>Elige tu armazón, tu graduación y tus accesorios. Nosotros calculamos la cotización y te damos tu ticket.</p>
+<a id="botonArmar" class="boton oculto" href="#cotizador">Armar mis lentes</a>
+</div>
+
+<div id="tarjetaLogin" class="tarjeta login">
+<h2>Entrar al sistema</h2>
+<label for="usuario">Usuario</label>
+<input id="usuario" type="text" placeholder="Tu usuario">
+<label for="contrasena">Contraseña</label>
+<input id="contrasena" type="password" placeholder="Tu contraseña">
+<details>
+<summary>Dirección de la API</summary>
+<input id="direccionApi" type="text">
+</details>
+<div class="fila">
+<button id="botonEntrar" class="boton">Iniciar sesión</button>
+<button id="botonRegistro" class="boton claro">Crear cuenta</button>
+</div>
+<p id="avisoLogin" class="aviso oculto"></p>
+</div>
+</section>
+
+<p id="avisoGeneral" class="aviso oculto"></p>
+
+<div id="contenido" class="oculto">
+<section id="sinDatos" class="seccion oculto">
+<div class="tarjeta vacio">
+<h2>Todavía no hay productos</h2>
+<p>La base de datos está vacía. Puedes cargar unos productos de ejemplo para probar el sitio.</p>
+<button id="botonEjemplos" class="boton">Cargar datos de ejemplo</button>
+</div>
+</section>
+
+<section id="armazones" class="seccion">
+<h2>Armazones</h2>
+<div id="listaArmazones" class="rejilla"></div>
+</section>
+
+<section id="graduaciones" class="seccion fondo">
+<h2>Graduaciones</h2>
+<div id="listaGraduaciones" class="rejilla"></div>
+</section>
+
+<section id="accesorios" class="seccion">
+<h2>Accesorios</h2>
+<div id="listaAccesorios" class="rejilla"></div>
+</section>
+
+<section id="cotizador" class="seccion fondo">
+<h2>Cotizador</h2>
+<div class="cotizador">
+<div class="tarjeta">
+<label for="selArmazon">Armazón</label>
+<select id="selArmazon"></select>
+<label for="selGraduacion">Graduación</label>
+<select id="selGraduacion"></select>
+<p class="etiqueta">Accesorios</p>
+<div id="checksAccesorios" class="checks"></div>
+<label for="nombreCliente">Nombre del cliente</label>
+<input id="nombreCliente" type="text" placeholder="Tu nombre">
+<label for="correoCliente">Correo</label>
+<input id="correoCliente" type="email" placeholder="correo@ejemplo.com">
+</div>
+<div class="tarjeta resumen">
+<h3>Resumen</h3>
+<div class="linea"><span>Subtotal</span><span id="subtotal">$0.00</span></div>
+<div class="linea"><span>Descuento</span><span id="descuento">$0.00</span></div>
+<div class="linea total"><span>Total</span><span id="total">$0.00</span></div>
+<p class="nota">Si llevas 2 o más accesorios tienes 10% de descuento.</p>
+<button id="botonComprar" class="boton">Comprar</button>
+<p id="avisoCompra" class="aviso oculto"></p>
+</div>
+</div>
+<div id="ticket" class="tarjeta ticket oculto"></div>
+</section>
+
+<section id="compras" class="seccion">
+<h2>Mis compras</h2>
+<div class="tabla-caja">
+<table>
+<thead>
+<tr><th>No.</th><th>Fecha</th><th>Cliente</th><th>Armazón</th><th>Graduación</th><th>Accesorios</th><th>Total</th></tr>
+</thead>
+<tbody id="tablaCompras"></tbody>
+</table>
+</div>
+</section>
+</div>
+</main>
+
+<footer>
+<p>Óptica Los Jerrys · Proyecto de Implementación de Sistemas · UNAM FCA</p>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
